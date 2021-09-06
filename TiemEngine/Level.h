@@ -10,6 +10,10 @@ class Level
 private:
 	vector<DrawableObject*> objectsList;
 	ImageObject * player;
+	float left = -3,
+		right = 3,
+		bottom = -3,
+		top = 3;
 
 public:
 	virtual void LevelLoad();

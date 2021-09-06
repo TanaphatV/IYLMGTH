@@ -11,6 +11,10 @@ void Level::LevelLoad()
 
 void Level::LevelInit()
 {
+	left = -5;
+	right = 5;
+	bottom = -5;
+	top = 5;
 	/*GameObject * obj = new GameObject();
 	obj->SetColor(1.0, 0.0, 0.0);*/
 	ImageObject* obj = new ImageObject();
@@ -18,7 +22,7 @@ void Level::LevelInit()
 	obj->SetTexture("../Resource/Texture/t9.png");
 
 	objectsList.push_back(obj);
-
+	
 	player = obj;
 
 	ImageObject* img = new ImageObject();
@@ -32,6 +36,11 @@ void Level::LevelInit()
 void Level::LevelUpdate()
 {
 	//cout << "Update Level" << endl;
+	left = player->GetPosition().x - 5;
+	right = player->GetPosition().x + 5;
+	bottom = player->GetPosition().y - 5;
+	top = player->GetPosition().y + 5;
+	GameEngine::GetInstance()->SetDrawArea(left, right, bottom, top);
 }
 
 void Level::LevelDraw()

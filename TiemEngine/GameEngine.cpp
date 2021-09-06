@@ -39,7 +39,7 @@ void GameEngine::Render(vector<DrawableObject*> renderObjects)
 
 void GameEngine::SetDrawArea(float left, float right, float bottom, float top)
 {
-	renderer->SetOrthoProjection(-3, 3, -3, 3);
+	renderer->SetOrthoProjection(left, right, bottom, top);
 }
 
 void GameEngine::SetBackgroundColor(float r, float g, float b)
